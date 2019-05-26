@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-service
+spec:
+  selector:
+    app: app-pod
+  ports:
+  - protocol: TCP
+    port: {{ .Values.app.service.port }}
+    targetPort: {{ .Values.app.service.port }}
+  type: {{ .Values.app.service.type }}
