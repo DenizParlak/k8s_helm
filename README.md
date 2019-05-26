@@ -39,3 +39,7 @@ Here the encrypted text next to the key is the actualy value which is base64 enc
 service.yaml file contains selector and port information to expose the service.
 
 In mysql side, I created helm chart too for deployment process. I used '3306' port as NodePort. In templates directory, I created deployment.yaml file like web server and also created pvc.yaml & pv.yaml files to provide persistend storage volume on host. Also I keep secret.yaml file in there. Lastly, service.yaml file linked to values.yaml for port information.
+
+# Screenshots
+
+![image](https://github.com/DenizParlak/hayat/blob/master/h1.jpg)
