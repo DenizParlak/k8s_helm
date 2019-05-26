@@ -8,7 +8,7 @@ node.js &amp; php application with minikube - helm
 - docker
 - kubectl
 
-- Instructions -
+## Instructions
 
 1-) Go to 'mysql' folder and execute command:
 
@@ -33,14 +33,6 @@ helm/values.yaml file included parameters and values for kubernetes directives a
 In helm/templates directory, I've two yaml files here one of this for deployment and another file for web server service to expose. I used helm values and kubernetes secrets to prevent hard coded datas in file.
 
 To access it from kubectl we will need to run "kubectl get secrets" which will list down all secrets. In this case, our secret for mysql is mysql-secrets so to get the content of it use command "kubectl get secret mysql-secrets -o yaml"
-
-In this file under data heading we will see:
-
-data:
-mysql-database: YnVyYWtfZGI=
-mysql-password: MTIzMTIz
-mysql-root-password: MTIzMTIz
-mysql-user: cm9vdA==
 
 Here the encrypted text next to the key is the actualy value which is base64 encoded. So to view the value you copy it i.e "YnVyYWtfZGI=" and then go to https://www.base64decode.net/ or some other way to decode the string like | base64 decode command.
 
