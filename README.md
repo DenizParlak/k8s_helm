@@ -1,12 +1,12 @@
 # k8s_helm
 node.js &amp; php application with minikube - helm
 
-- Pre Requirements -
+## Pre Requirements
 
-. minikube
-. helm & tiller
-. docker
-. kubectl
+- minikube
+- helm & tiller
+- docker
+- kubectl
 
 - Instructions -
 
