@@ -36,7 +36,13 @@ docker build -t app:latest .
 
 helm upgrade app helm/ --install
 
+5-) Go to 'nodejs' folder and execute commands:
 
+docker build -t nodejsapp .
+
+kubectl create -f deployment.yaml
+
+kubectl create -f service.yaml
 
 ---
 
@@ -57,6 +63,8 @@ Here the encrypted text next to the key is the actualy value which is base64 enc
 service.yaml file contains selector and port information to expose the service.
 
 In mysql side, I created helm chart too for deployment process. I used '3306' port as NodePort. In templates directory, I created deployment.yaml file like web server and also created pvc.yaml & pv.yaml files to provide persistend storage volume on host. Also I keep secret.yaml file in there. Lastly, service.yaml file linked to values.yaml for port information.
+
+To serve node application we need just deploy to both of yaml files in nodejs/ directory.
 
 # Screenshots
 >>>>>>> c11db9dcabeaab875e94011d68ed1fa98e24c7bd
