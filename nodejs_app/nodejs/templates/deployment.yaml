@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+  labels:
+    app: nodejs-pod
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nodejs-pod
+  template:
+    metadata:
+      labels:
+        app: nodejs-pod
+    spec:
+      containers:
+      - name: nodejsapp
+        image: "{{ .Values.app.image.name }}:{{ .Values.app.image.tag }}"
+        imagePullPolicy: {{ .Values.app.image.pullPolicy }}
+        ports:
+        - containerPort: 7000

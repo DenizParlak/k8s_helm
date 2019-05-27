@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejsapp-service
+spec:
+  selector:
+    app: nodejs-pod
+  ports:
+  - protocol: TCP
+    port: {{ .Values.app.service.port }}
+    targetPort: {{ .Values.app.service.port }}

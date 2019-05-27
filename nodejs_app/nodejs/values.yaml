@@ -1,0 +1,10 @@
+replicaCount: 1
+
+nodejs:
+  image:
+    name: nodejsapp
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort
+    port: 30061
