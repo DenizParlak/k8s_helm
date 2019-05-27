@@ -24,15 +24,17 @@ and 'tiller-deploy' should be running as pod.
 
 helm upgrade mysql helm/ --install
 
-3-) Go to 'app' folder and execute commands:
+3-) Link local docker repos to minikube
+
+eval $(minikube docker-env)
+
+4-) Go to 'app' folder and execute commands:
 
 docker build -t app:latest .
 
 helm upgrade app helm/ --install
 
-4-) Link local docker repos to minikube
 
-eval $(minikube docker-env)
 
 ---
 
