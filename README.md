@@ -40,9 +40,8 @@ helm upgrade app helm/ --install
 
 docker build -t nodejsapp .
 
-kubectl create -f deployment.yaml
+helm upgrade nodejs helm/ --install
 
-kubectl create -f service.yaml
 
 ---
 
@@ -67,4 +66,3 @@ In mysql side, I created helm chart too for deployment process. I used '3306' po
 To serve node application we need just deploy to both of yaml files in nodejs/ directory.
 
 # Screenshots
->>>>>>> c11db9dcabeaab875e94011d68ed1fa98e24c7bd
