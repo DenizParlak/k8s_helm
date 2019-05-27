@@ -12,10 +12,7 @@ node.js &amp; php application with minikube - helm
 
 1-) Execute commands to deploy tiller:
 
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > helm.sh
-chmod 700 helm.sh
-./helm.sh
-helm init
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > helm.sh && chmod 700 helm.sh && ./helm.sh && helm init
 
 Note: helm/tiller must be ready before to continue on this step. To check with:
 
