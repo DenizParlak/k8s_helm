@@ -42,6 +42,10 @@ docker build -t nodejsapp .
 
 helm upgrade nodejs helm/ --install
 
+6-) Get exposed services:
+
+minikube service list
+
 
 ---
 
