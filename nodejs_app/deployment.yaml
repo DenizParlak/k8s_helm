@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nodejs
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: nodejs
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7000
