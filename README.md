@@ -38,7 +38,7 @@ eval $(minikube docker-env)
 
 The project have 5 main components: Web server, PHP application, node.js application, MySQL database and helm charts.
 
-I created a Dockerfile via php:apache image. This image would install mysql package inside, copy my index.php file to Web server root and expose 80 port.
+I created a Dockerfile via php:apache image. This image would install mysql package inside, copy my index.php file to DocumentRoot and expose 80 port.
 
 src/ directory contains index.php file. This PHP file also include all requirements to access mysql service / fetch information from sample db and serve via HTTP.
 
