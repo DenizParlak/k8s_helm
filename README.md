@@ -14,7 +14,7 @@ node.js &amp; php application with minikube - helm
 
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > helm.sh && chmod 700 helm.sh && ./helm.sh && helm init
 
-Note: helm/tiller must be ready before to continue on this step. To check with:
+Note: helm/tiller must be ready before to continue on this step. To check:
 
 kubectl get pods --namespace kube-system
 
