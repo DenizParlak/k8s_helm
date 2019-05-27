@@ -10,19 +10,36 @@ node.js &amp; php application with minikube - helm
 
 ## Instructions
 
-1-) Go to 'mysql' folder and execute command:
+1-) Execute commands to deploy tiller:
+
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > helm.sh
+chmod 700 helm.sh
+./helm.sh
+helm init
+
+Note: helm/tiller must be ready before to continue on this step. To check with:
+
+kubectl get pods --namespace kube-system
+
+and 'tiller-deploy' should be running as pod.
+
+2-) Go to 'mysql' folder and execute command:
 
 helm upgrade mysql helm/ --install
 
-2-) Go to 'app' folder and execute commands:
+3-) Go to 'app' folder and execute commands:
 
 docker build -t app:latest .
 
 helm upgrade app helm/ --install
 
+4-) Link local docker repos to minikube
+
+eval $(minikube docker-env)
+
 ---
 
-The project have 4 main components: Web server, PHP application, node.js application and MySQL database.
+The project have 5 main components: Web server, PHP application, node.js application, MySQL database and helm charts.
 
 I created a Dockerfile via php:apache image. This image would install mysql package inside, copy my index.php file to Web server root and expose 80 port.
 
@@ -41,5 +58,3 @@ service.yaml file contains selector and port information to expose the service.
 In mysql side, I created helm chart too for deployment process. I used '3306' port as NodePort. In templates directory, I created deployment.yaml file like web server and also created pvc.yaml & pv.yaml files to provide persistend storage volume on host. Also I keep secret.yaml file in there. Lastly, service.yaml file linked to values.yaml for port information.
 
 # Screenshots
-
-![image](https://github.com/DenizParlak/hayat/blob/master/h1.jpg)
