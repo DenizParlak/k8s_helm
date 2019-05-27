@@ -38,7 +38,7 @@ helm upgrade app helm/ --install
 
 5-) Go to 'nodejs' folder and execute commands:
 
-docker build -t nodejs .
+docker build -t nodejsapp .
 
 kubectl create -f deployment.yaml
 
